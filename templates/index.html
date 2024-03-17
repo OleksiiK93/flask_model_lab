@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Orders</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>List of orders</h1>
-    
-        {% for order in orders %}
-        <details>
-            <summary>{{order.customer_name}}</summary>
-            <p>{{order.product_name}}</p>
-        </details>
-        {% endfor %}
-    
-</body>
+    <table>
+      <tr>
+        <th>Customer</th>
+        <th>Date</th>
+        <th>Product</th>
+        <th>Brand</th>
+        <th>Quantity</th>
+        <th>Warranty</th>
+      </tr>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order.customer_name }}</td>
+        <td>{{ order.order_date.strftime('%x') }}</td>
+        <td>{{ order.product_name }}</td>
+        <td>{{ order.brand }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.warranty }} months</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
 </html>

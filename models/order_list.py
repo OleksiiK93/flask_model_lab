@@ -2,7 +2,7 @@ import datetime
 from models.order import Order
 
 orders = [
-    Order("Oleksii", datetime.datetime(2024, 3, 17), 2, 'ACER Swift X 14" Laptop - Intel® Core™ i7, 1 TB SSD, Grey', 'ACER', 12),
+    Order("Oleksii", datetime.datetime(2024, 3, 17), 2, 'Acer Swift X 14" Laptop - Intel® Core™ i7, 1 TB SSD, Grey', 'Acer', 12),
     Order("Alice", datetime.datetime(2024, 3, 16), 1, 'iPhone 15 Pro Max - 512GB, Pacific Blue', 'Apple', 24),
     Order("Bob", datetime.datetime(2024, 3, 15), 3, 'Xbox Series X Console', 'Microsoft', 12),
     Order("Charlie", datetime.datetime(2024, 3, 14), 1, 'The Last of Us Part III - PlayStation 6', 'Naughty Dog', 0),
