@@ -3,29 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='main.css') }}"
+    />
     <title>Orders</title>
   </head>
   <body>
     <h1>List of orders</h1>
-    <table>
-      <tr>
-        <th>Customer</th>
-        <th>Date</th>
-        <th>Product</th>
-        <th>Brand</th>
-        <th>Quantity</th>
-        <th>Warranty</th>
-      </tr>
-      {% for index, order in enumerated_orders %}
-      <tr>
-        <td><a href="/orders/{{index}}">{{ order.customer_name }}</a></td>
-        <td>{{ order.order_date.strftime('%x') }}</td>
-        <td>{{ order.product_name }}</td>
-        <td>{{ order.brand }}</td>
-        <td>{{ order.quantity }}</td>
-        <td>{{ order.warranty }} months</td>
-      </tr>
-      {% endfor %}
-    </table>
+    <div style="overflow-x: auto">
+      <table>
+        <tr>
+          <th>Customer</th>
+          <th>Date</th>
+          <th>Product</th>
+          <th>Brand</th>
+          <th>Quantity</th>
+          <th>Warranty</th>
+        </tr>
+        {% for index, order in enumerated_orders %}
+        <tr>
+          <td><a href="/orders/{{index}}">{{ order.customer_name }}</a></td>
+          <td>{{ order.order_date.strftime('%x') }}</td>
+          <td>{{ order.product_name }}</td>
+          <td>{{ order.brand }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{ order.warranty }} months</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
   </body>
 </html>
